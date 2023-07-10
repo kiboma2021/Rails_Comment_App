@@ -8,3 +8,17 @@
 
   <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
+
+<br>
+
+<div>
+<%= form_with(model: [@post, @post.comments.build]) do |f| %>
+  <div>
+    <%= f.label 'New Comment' %> <br>
+    <%= f.text_area :body %><br>
+    </div>
+  <%= f.submit 'Add Comment' %>
+<% end %>
+
+
+</div>
